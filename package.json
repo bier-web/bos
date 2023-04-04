@@ -1,0 +1,33 @@
+{
+  "name": "bos",
+  "version": "1.0.0",
+  "description": "BierOnStack, Desenvolvimento Rápido",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bos": "./bin/bos.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bier-web/bos.git"
+  },
+  "author": "Carlos Eduardo Bier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bier-web/bos/issues"
+  },
+  "homepage": "https://github.com/bier-web/bos#readme",
+  "dependencies": {
+    "bos-backend": "file:../bos-backend",
+    "colors": "^1.4.0",
+    "commander": "^10.0.0",
+    "crypto": "^1.0.1",
+    "dotenv-extended": "^2.9.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.0.0",
+    "moment-timezone": "^0.5.43",
+    "shelljs": "^0.8.5"
+  }
+}

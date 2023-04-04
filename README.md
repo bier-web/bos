@@ -1,2 +1,0 @@
-# bos
-BierOnStack App
