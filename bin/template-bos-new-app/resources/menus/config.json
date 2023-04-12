@@ -1,0 +1,109 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "name",
+			"order": 0
+		},
+		"url": {
+			"name": "url",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "url",
+			"order": 1
+		},
+		"tagName": {
+			"name": "tagName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "tagName",
+			"order": 2
+		},
+		"iconClass": {
+			"name": "iconClass",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "iconClass",
+			"order": 3
+		},
+		"order": {
+			"name": "order",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "order",
+			"order": 4
+		},
+		"isSeparator": {
+			"name": "isSeparator",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isSeparator",
+			"order": 5
+		},
+		"isSystem": {
+			"name": "isSystem",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isSystem",
+			"order": 6
+		},
+		"isRoot": {
+			"name": "isRoot",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isRoot",
+			"order": 7
+		},
+		"isParent": {
+			"name": "isParent",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isParent",
+			"order": 8
+		},
+		"menuParentId": {
+			"name": "menuParentId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "menuParentId",
+			"order": 9
+		},
+		"isActive": {
+			"name": "isActive",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isActive",
+			"order": 10
+		},
+		"isReportMenu": {
+			"name": "isReportMenu",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isReportMenu",
+			"order": 11
+		},
+		"route": {
+			"name": "route",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "route",
+			"order": 12
+		}
+	}
+}

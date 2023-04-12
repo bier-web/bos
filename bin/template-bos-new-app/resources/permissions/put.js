@@ -1,0 +1,1 @@
+cancelIf(!internal, 'Permissão negada');

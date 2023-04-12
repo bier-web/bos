@@ -1,0 +1,109 @@
+{
+	"type": "Collection",
+	"properties": {
+		"systemIsPost": {
+			"name": "systemIsPost",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "systemIsPost",
+			"order": 0
+		},
+		"actorId": {
+			"name": "actorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "actorId",
+			"order": 1
+		},
+		"typeId": {
+			"name": "typeId",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "typeId",
+			"order": 2
+		},
+		"title": {
+			"name": "title",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "title",
+			"order": 3
+		},
+		"alert": {
+			"name": "alert",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "alert",
+			"order": 4
+		},
+		"startDate": {
+			"name": "startDate",
+			"type": "date",
+			"typeLabel": "date",
+			"required": false,
+			"id": "startDate",
+			"order": 5
+		},
+		"endDate": {
+			"name": "endDate",
+			"type": "date",
+			"typeLabel": "date",
+			"required": false,
+			"id": "endDate",
+			"order": 6
+		},
+		"isActive": {
+			"name": "isActive",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isActive",
+			"order": 7
+		},
+		"userGroupId": {
+			"name": "userGroupId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userGroupId",
+			"order": 8
+		},
+		"userId": {
+			"name": "userId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userId",
+			"order": 9
+		},
+		"usersIds": {
+			"name": "usersIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "usersIds",
+			"order": 10
+		},
+		"usersReadIds": {
+			"name": "usersReadIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "usersReadIds",
+			"order": 11
+		},
+		"emittedAt": {
+			"name": "emittedAt",
+			"type": "date",
+			"typeLabel": "date",
+			"required": false,
+			"id": "emittedAt",
+			"order": 12
+		}
+	}
+}

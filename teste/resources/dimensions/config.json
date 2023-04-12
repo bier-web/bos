@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"collectionName": {
+			"name": "collectionName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "collectionName",
+			"order": 1
+		},
+		"collectionField": {
+			"name": "collectionField",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "collectionField",
+			"order": 2
+		},
+		"userField": {
+			"name": "userField",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userField",
+			"order": 3
+		}
+	}
+}

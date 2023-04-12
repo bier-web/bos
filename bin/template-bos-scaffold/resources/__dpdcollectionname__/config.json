@@ -1,0 +1,38 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 1
+		},
+		"createdAt": {
+			"name": "createdAt",
+			"type": "date",
+			"typeLabel": "date",
+			"required": false,
+			"id": "createdAt",
+			"order": 2
+		},
+		"systemIsPost": {
+			"name": "systemIsPost",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "systemIsPost",
+			"order": 3
+		},
+		"systemIsLocked": {
+			"name": "systemIsLocked",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "systemIsLocked",
+			"order": 4
+		}
+
+	}
+}

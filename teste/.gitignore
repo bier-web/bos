@@ -1,0 +1,12 @@
+*.wrap-client.js
+.log
+.project
+.env
+node_modules/
+data/
+.bos-backend/
+public-development/bower_components/
+public-development/assets/css/
+public-development/assets/bos-client/tags/
+public-production
+public-homolog

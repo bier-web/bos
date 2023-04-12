@@ -1,11 +1,84 @@
 const bosBackend = require('bos-backend');
 const bosHelpers = require('../helpers/bos-helpers.js');
 const bosKeys = require('../helpers/bos-keys.js');
-
 const fs = require('fs');
 const moment = require('moment-timezone');
 
+require('shelljs/global');
+
 module.exports = {
+	prepareBosApp() {
+		return new Promise((resolve, reject) => {
+			let exec = require('child_process').exec;
+			exec(`npm install`, function (error, stdout, stderr) {
+				if (error !== null) {
+					reject(error);
+				} else {
+					bosHelpers.log.info(stdout);
+					exec(`npm i riot@3.10.1 -g && npm i pug -g && npm i less@2.7.2 -g && npm i bos-watcherless -g`, function (error, stdout, stderr) {
+						if (error !== null) {
+							reject(error);
+						} else {
+							bosHelpers.log.info(stdout);
+							bosHelpers.log.success('*** Dependências instaladas, iniciando compilação');
+
+							module.exports
+								.buildTags()
+								.then(() => {
+									bosHelpers.log.success('*** Componentes riot compilados com sucesso!');
+									module.exports
+										.buildLess()
+										.then(() => {
+											bosHelpers.log.success('*** Classes css compiladas com sucesso!');
+											resolve();
+										})
+										.catch((error) => {
+											bosHelpers.log.error(`*** Erro classes css ${error}`);
+											reject(error);
+										});
+								})
+								.catch((error) => {
+									bosHelpers.log.error(`*** Erro compilando componentes riot ${error}`);
+									reject(error);
+								});
+						}
+					});
+				}
+			});
+		});
+	},
+	buildTags() {
+		return new Promise((resolve, reject) => {
+			let exec = require('child_process').exec;
+			exec(`riot --template pug public-development/tags/pugs/ public-development/assets/bos-client/tags`, function (error, stdout, stderr) {
+				if (error !== null) {
+					reject(error);
+				} else {
+					bosHelpers.log.info(stdout);
+					resolve();
+				}
+			});
+		});
+	},
+	buildLess() {
+		return new Promise((resolve, reject) => {
+			let exec = require('child_process').exec;
+			exec(`npm install`, function (error, stdout, stderr) {
+				if (error !== null) {
+					reject(error);
+				} else {
+					exec(`boswatcherless public-development/tags/styles public-development/assets/css -j -c`, function (error, stdout, stderr) {
+						if (error !== null) {
+							reject(error);
+						} else {
+							bosHelpers.log.info(stdout);
+							resolve();
+						}
+					});
+				}
+			});
+		});
+	},
 	tryStartBosBackend(mongoConnectionString, mongoDatabaseName, dirServer) {
 		return new Promise((resolve, reject) => {
 			try {
@@ -65,7 +138,6 @@ module.exports = {
 			moment.locale(process.env.bosMoment_Locale);
 			callback();
 		};
-
 		applySettings(() => {
 			let bosBackendServer = getBosBackendServer(options);
 			bosBackendServer.listen();

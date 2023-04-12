@@ -1,0 +1,125 @@
+{
+	"type": "Collection",
+	"properties": {
+		"name": {
+			"name": "name",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "name",
+			"order": 0
+		},
+		"supervisorEmployeePositionIds": {
+			"name": "supervisorEmployeePositionIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "supervisorEmployeePositionIds",
+			"order": 1
+		},
+		"coordinatorEmployeePositionIds": {
+			"name": "coordinatorEmployeePositionIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "coordinatorEmployeePositionIds",
+			"order": 2
+		},
+		"sellerEmployeePositionIds": {
+			"name": "sellerEmployeePositionIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "sellerEmployeePositionIds",
+			"order": 3
+		},
+		"saleStatusAuditedIds": {
+			"name": "saleStatusAuditedIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "saleStatusAuditedIds",
+			"order": 4
+		},
+		"backofficeEmployeePositionIds": {
+			"name": "backofficeEmployeePositionIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "backofficeEmployeePositionIds",
+			"order": 5
+		},
+		"allowedStatusOnQueuePendingIds": {
+			"name": "allowedStatusOnQueuePendingIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "allowedStatusOnQueuePendingIds",
+			"order": 6
+		},
+		"allowedStatusOnQueueTreatmentIds": {
+			"name": "allowedStatusOnQueueTreatmentIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "allowedStatusOnQueueTreatmentIds",
+			"order": 7
+		},
+		"allowedStatusOnQueuePreSaleIds": {
+			"name": "allowedStatusOnQueuePreSaleIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "allowedStatusOnQueuePreSaleIds",
+			"order": 8
+		},
+		"allowedStatusOnQueuePosSaleIds": {
+			"name": "allowedStatusOnQueuePosSaleIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "allowedStatusOnQueuePosSaleIds",
+			"order": 9
+		},
+		"saleStatusIndexProgressionIds": {
+			"name": "saleStatusIndexProgressionIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "saleStatusIndexProgressionIds",
+			"order": 10
+		},
+		"saleStatusNonBlockingIds": {
+			"name": "saleStatusNonBlockingIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "saleStatusNonBlockingIds",
+			"order": 11
+		},
+		"showedStatusOnQueuePendingIds": {
+			"name": "showedStatusOnQueuePendingIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "showedStatusOnQueuePendingIds",
+			"order": 12
+		},
+		"showedStatusOnQueuePreSaleIds": {
+			"name": "showedStatusOnQueuePreSaleIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "showedStatusOnQueuePreSaleIds",
+			"order": 13
+		},
+		"showedStatusOnQueuePosSaleIds": {
+			"name": "showedStatusOnQueuePosSaleIds",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "showedStatusOnQueuePosSaleIds",
+			"order": 14
+		}
+	}
+}

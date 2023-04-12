@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"menuId": {
+			"name": "menuId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "menuId",
+			"order": 0
+		},
+		"userGroupId": {
+			"name": "userGroupId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "userGroupId",
+			"order": 1
+		}
+	}
+}

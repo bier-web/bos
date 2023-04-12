@@ -7,6 +7,30 @@ const fs = require('fs');
 require('shelljs/global');
 
 module.exports = {
+	actionBuildTags() {
+		bosCore
+			.buildTags()
+			.then(() => {
+				bosHelpers.log.info('*** Componentes sendo compilados riot compilados em background!');
+				resolve();
+			})
+			.catch((error) => {
+				bosHelpers.log.error(`*** Erro compilando componentes riot ${error}`);
+				reject(error);
+			});
+	},
+	actionBuildLess() {},
+	actionPrepareBosApp() {
+		bosHelpers.log.info(`*** BosApp preparando ambiente, aguarde...`);
+		bosCore
+			.prepareBosApp()
+			.then(() => {
+				bosHelpers.log.success(`*** BosApp preparado com sucesso!`);
+			})
+			.catch((error) => {
+				bosHelpers.log.error(`Erro preparando ambiente para execução do BosApp ${error}!`);
+			});
+	},
 	actionNew(bosAppName) {
 		bosAppName = bosAppName || 'my-bos-app';
 		if (bosHelpers.directoryExists(bosAppName)) {
@@ -18,7 +42,8 @@ module.exports = {
 					bosHelpers
 						.createDirectory(`${bosAppName}/.bos-backend`)
 						.then(() => {
-							cp('-Rf', path.join(__dirname, '/template-new-bos-app/*'), bosAppName);
+							cp('-Rf', path.join(__dirname, '/template-bos-new-app/*'), bosAppName);
+							fs.renameSync(`${bosAppName}/gitignore`, `${bosAppName}/.gitignore`);
 							const questions = [
 								{
 									type: 'input',
@@ -68,17 +93,8 @@ module.exports = {
 								bosCore
 									.createBosAppFile(`${fs.realpathSync('./')}/${bosAppName}/`, mongoConnectionString, mongoAnswers.mongoDatabaseName)
 									.then(() => {
-										bosCore
-											.tryStartBosBackend(mongoConnectionString, mongoAnswers.mongoDatabaseName, `${fs.realpathSync('./')}/${bosAppName}`)
-											.then((bosBackend) => {
-												bosHelpers.log.success('Conexão bosBackend feita com sucesso, configurações ok');
-												bosHelpers.log.info(`Para iniciar seu projeto: cd ${bosAppName} bos start <ENTER>`);
-												bosBackend.stop();
-												bosHelpers.stop(1);
-											})
-											.catch((error) => {
-												bosHelpers.log.error(`Erro tentando iniciar bosBackend: ${error}`);
-											});
+										bosHelpers.log.info(`Projeto criado. Use cd ${bosAppName} bos prepare <ENTER> e então...`);
+										bosHelpers.log.info(`para iniciar seu projeto: cd ${bosAppName} bos start <ENTER>`);
 									})
 									.catch((error) => {
 										bosHelpers.log.error(`Erro criando arquivo de configuração .env do bosBackend: ${error}`);
@@ -134,7 +150,7 @@ module.exports = {
 
 		bosCore.startApp(_options);
 	},
-	keygen() {
+	actionGenerateKey() {
 		let generateKey = () => {
 			bosCore
 				.keygen()
@@ -158,7 +174,7 @@ module.exports = {
 			generateKey();
 		}
 	},
-	showkey() {
+	actionShowKey() {
 		bosCore
 			.showkey()
 			.then((key) => {

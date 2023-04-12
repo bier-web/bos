@@ -4,7 +4,8 @@
   "description": "BierOnStack, Desenvolvimento Rápido",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
   },
   "bin": {
     "bos": "./bin/bos.js"
@@ -28,6 +29,8 @@
     "fs-extra": "^11.1.1",
     "inquirer": "^8.0.0",
     "moment-timezone": "^0.5.43",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "pug": "^3.0.2",
+    "riot": "^3.10.1"
   }
 }

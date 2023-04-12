@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"itemId": {
+			"name": "itemId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "itemId",
+			"order": 0
+		},
+		"categoryItemId": {
+			"name": "categoryItemId",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "categoryItemId",
+			"order": 1
+		},
+		"descriptionItem": {
+			"name": "descriptionItem",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "descriptionItem",
+			"order": 2
+		}
+	}
+}

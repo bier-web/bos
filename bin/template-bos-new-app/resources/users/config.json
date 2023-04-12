@@ -1,0 +1,109 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"fullName": {
+			"name": "fullName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fullName",
+			"order": 0
+		},
+		"photoUrl": {
+			"name": "photoUrl",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "photoUrl",
+			"order": 1
+		},
+		"isProfileCompleted": {
+			"name": "isProfileCompleted",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isProfileCompleted",
+			"order": 2
+		},
+		"email": {
+			"name": "email",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "email",
+			"order": 3
+		},
+		"isActive": {
+			"name": "isActive",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isActive",
+			"order": 4
+		},
+		"isRoot": {
+			"name": "isRoot",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isRoot",
+			"order": 5
+		},
+		"captcha": {
+			"name": "captcha",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "captcha",
+			"order": 6
+		},
+		"isAuditable": {
+			"name": "isAuditable",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "isAuditable",
+			"order": 7
+		},
+		"systemIsPost": {
+			"name": "systemIsPost",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "systemIsPost",
+			"order": 8
+		},
+		"coordinatorId": {
+			"name": "coordinatorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "coordinatorId",
+			"order": 9
+		},
+		"supervisorId": {
+			"name": "supervisorId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "supervisorId",
+			"order": 10
+		},
+		"sellerId": {
+			"name": "sellerId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "sellerId",
+			"order": 11
+		},
+		"backofficeId": {
+			"name": "backofficeId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "backofficeId",
+			"order": 12
+		}
+	}
+}

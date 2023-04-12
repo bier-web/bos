@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"userGroupId": {
+			"name": "userGroupId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "userGroupId",
+			"order": 0
+		},
+		"permissionId": {
+			"name": "permissionId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "permissionId",
+			"order": 1
+		}
+	}
+}

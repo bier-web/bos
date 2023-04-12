@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"collection": {
+			"name": "collection",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "collection",
+			"order": 0
+		},
+		"actionId": {
+			"name": "actionId",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "actionId",
+			"order": 1
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "description",
+			"order": 2
+		}
+	}
+}
