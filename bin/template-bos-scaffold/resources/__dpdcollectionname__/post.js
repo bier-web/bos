@@ -1,15 +1,15 @@
 /* BOS - BierOnStack - File Reserved: ToChange */
 let helpers = requireModule('helpers');
-let __collectioncamelcase__Business = requireModule('__dpdcollectionname__-business');
+let __collectioncamelcase__Business = requireModule('__boscollectionname__-business');
 let __objectItem__ = this;
 
 try {
 	helpers.helperServer.showLog('BierOnStack: Recurso __collectioncamelcase__ :: Evento :: Post :: Ação :: Begin');
 	cancelUnless(me || internal, 'Usuário não autorizado!', 401);
-	__collectioncamelcase__Business.prepareObjectToPost(ctx, dpd, me, __objectItem__, function (objectItemToPost) {
-		__collectioncamelcase__Business.canPost(ctx, dpd, me, objectItemToPost, function (canPost, message) {
+	__collectioncamelcase__Business.prepareObjectToPost(ctx, bos, me, __objectItem__, function (objectItemToPost) {
+		__collectioncamelcase__Business.canPost(ctx, bos, me, objectItemToPost, function (canPost, message) {
 			if (canPost) {
-				__collectioncamelcase__Business.onPost(ctx, dpd, me, objectItemToPost);
+				__collectioncamelcase__Business.onPost(ctx, bos, me, objectItemToPost);
 			} else {
 				cancel(message);
 			}

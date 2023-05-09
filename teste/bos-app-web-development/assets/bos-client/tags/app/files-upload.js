@@ -1,0 +1,4 @@
+
+riot.tag2('files-upload', '<div class="ui segment files-upload-container"> <form class="files-upload-form ui mini equal width form error" autocomplete="off"> <div class="ui grid wide middle aligned stackable"> <div class="row"> <div class="column"><a class="ui blue horizontal label">Planilha para Upload</a></div> </div> <div class="row one column"> <div class="column"> <div class="files-uploader"> <div class="row center aligned"></div> </div> </div> </div> <div class="row one column"> <div class="column"> <button-tag button-type="{helpersWebApp.both().actions.arrowUp}" button-fluid button-color="orange" icon-color="black" button-label="Enviar" button-size="large" button-click="{uploadClick}"></button-tag> </div> </div> </div> </form> </div>', '', 'class="files-upload-tag"', function(opts) {
+filesUploadTag.call(this, this.opts)
+});

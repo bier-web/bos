@@ -1,0 +1,5 @@
+
+
+riot.tag2('lookup-combobox', '<div class="ui fluid search selection dropdown {&quot;multiple&quot;: opts.isAllowMultiple} {&quot;disabled&quot;: opts.isDisabled} }" data-position="bottom center" data-variation="mini" data-content="{opts.tooltip}"> <input type="hidden" id="{opts.formFieldId}" name="{opts.formFieldId}" autocomplete="nope"><i class="dropdown icon"></i><i class="remove icon" if="{!opts.isAllowMultiple}"></i><i class="refresh icon" if="{opts.isLargeDropDown}"></i> <div class="default text">{opts.placeholder}</div> <div class="menu"> <div class="item" each="{items}" data-value="{fieldId!=undefined ? this[fieldId] : id}">{this.parent.getLookupDescription(this, fieldDescription, fieldType, fieldFormat)}</div> </div> </div>', '', 'class="lookup-combobox-tag"', function(opts) {
+lookupComboBoxTag.call(this, this.opts)
+});

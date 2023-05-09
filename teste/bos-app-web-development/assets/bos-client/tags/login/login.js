@@ -1,0 +1,5 @@
+
+
+riot.tag2('login', '<div class="login-tag-container ui grid middle aligned centered container"> <div class="sixteen wide mobile eight wide tablet six wide computer column"><a href="/"> <div class="logo float-center"></div></a> <form class="login-form ui large form"> <div class="ui segment"> <div class="field"> <div class="ui left icon input"> <input type="text" placeholder="Digite seu nome de usuário" id="login-username"><i class="mail icon"></i> </div> </div> <div class="field"> <div class="ui left icon input"> <input type="password" placeholder="Digite sua senha" id="login-password"><i class="lock icon"></i> </div> </div> <div class="ui error message"></div> <div class="ui buttons centered fluid small"> <button class="ui primary button" type="submit">Entrar</button> <div class="or" if="{helpersWebApp.bosAppSettings.showRegisterOnLogin}" data-text="ou"></div> <button class="ui primary button" if="{helpersWebApp.bosAppSettings.showRegisterOnLogin}" type="button" onclick="{registerClick}">Registrar </button> </div> </div> </form> </div> </div>', '', 'class="login-tag"', function(opts) {
+loginTag.call(this, this.opts)
+});

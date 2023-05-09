@@ -1,6 +1,6 @@
 {
-	"type": "Fileupload",
-	"directory": "assets/mailing-files/",
-	"authorization": true,
-	"uniqueFilename": true
+    "type": "Fileupload",
+    "directory": "assets/files-uploaded/",
+    "authorization": true,
+    "uniqueFilename": true
 }

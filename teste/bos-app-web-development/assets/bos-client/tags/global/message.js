@@ -1,0 +1,5 @@
+
+
+riot.tag2('message', '<i class="close icon" if="{opts.canClose}"></i> <div class="ui header {opts.headerClass}" if="{opts.type==messageType.custom}"><i class="icon {opts.headerIcon}"></i>{opts.title}</div> <div class="ui header red" if="{opts.type==messageType.error}"><i class="icon remove"></i>{opts.title}</div> <div class="ui header orange" if="{opts.type==messageType.warning}"><i class="icon warning"></i>{opts.title}</div> <div class="ui header green" if="{opts.type==messageType.positive}"><i class="icon warning"></i>{opts.title}</div> <div class="content"> <p>{opts.message}</p> </div> <div class="actions" if="{opts.actions.length&gt;0}"> <div class="ui button {classes}" each="{opts.actions}" click="{parent.processClick}">{name}</div> </div> <div class="actions" if="{opts.actions.length==0}"> <div class="ui button" click="{closeMessage}">OK</div> </div>', '', 'class="message-tag ui tiny modal"', function(opts) {
+messageTag.call(this, this.opts)
+});

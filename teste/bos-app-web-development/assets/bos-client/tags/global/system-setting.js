@@ -1,0 +1,5 @@
+
+
+riot.tag2('system-setting', '<div class="ui segment system-setting-container"> <form class="system-setting-form ui tiny equal width form error" autocomplete="off"> <input type="hidden" id="system-setting-id"> <div class="ui grid wide middle aligned"> <div class="row"> <div class="ui error message"></div> </div> <div class="row two columns"> <div class="column"> <div class="field"> <label>Configuração</label> <input class="firstFocus" type="text" id="system-setting-name" placeholder="Nome da Configuração"> </div> </div> <div class="column"> <div class="field"> <label>Descrição</label> <input type="text" id="system-setting-description" placeholder="Descrição da Configuração"> </div> </div> </div> <div class="row columns"> <div class="column"> <div class="field"> <label>Valor</label> <input type="text" id="system-setting-value" placeholder="Valor da Configuração"> </div> </div> </div> </div> </form> </div>', '', 'class="system-setting-tag"', function(opts) {
+systemSettingTag.call(this, this.opts)
+});

@@ -3,29 +3,89 @@ const bosCore = require('./bos-core.js');
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
+const { cat } = require('shelljs');
 
 require('shelljs/global');
 
 module.exports = {
-	actionBuildTags() {
-		bosCore
-			.buildTags()
-			.then(() => {
-				bosHelpers.log.info('*** Componentes sendo compilados riot compilados em background!');
-				resolve();
-			})
+	createAdminUser() {
+		bosHelpers.log.info(`*** BosApp criando usuário admin`);
+		const questions = [
+			{
+				type: 'input',
+				name: 'userName',
+				message: `Informe o nome do usuário administrador`,
+				default() {
+					return 'bos.admin';
+				}
+			},
+			{
+				type: 'input',
+				name: 'userPassword',
+				message: `Informe a senha do usuário administrador`,
+				default() {
+					return 'bos.admin';
+				}
+			},
+			{
+				type: 'input',
+				name: 'userEmail',
+				message: `Informe o email do usuário administrador`,
+				default() {
+					return 'bos.admin@bos.admin.com';
+				}
+			}
+		];
+
+		const prompt = inquirer.createPromptModule();
+		prompt(questions).then((userAnswers) => {
+			bosCore
+				.createAdminUser(userAnswers.userName, userAnswers.userPassword, userAnswers.userEmail)
+				.then((rCreateAdminUser) => {
+					bosHelpers.log.info(rCreateAdminUser);
+				})
+				.catch((error) => {
+					bosHelpers.log.error(error);
+				});
+		});
+	},
+	createScreen() {
+		bosHelpers.log.info(`*** BosApp criando nova tela`);
+	},
+	actionBuildProd() {
+		bosHelpers.log.info(`*** BosApp Compilando App Produção`);
+	},
+	actionBuildDev(watchFiles) {
+		bosHelpers.log.info(`*** BosApp Compilando App Desenvolvimento`);
+		let _watchFiles = watchFiles || false;
+		const promiseBuildTags = bosCore
+			.buildTags(_watchFiles)
+			.then(() => {})
 			.catch((error) => {
 				bosHelpers.log.error(`*** Erro compilando componentes riot ${error}`);
-				reject(error);
+			});
+
+		const promiseBuildLess = bosCore
+			.buildLess(_watchFiles)
+			.then(() => {})
+			.catch((error) => {
+				bosHelpers.log.error(`*** Erro compilando classes less ${error}`);
+			});
+
+		Promise.all([promiseBuildTags, promiseBuildLess])
+			.then(() => {
+				module.exports.startApp();
+			})
+			.catch((error) => {
+				bosHelpers.log.error(`*** Erro preparando build de desenvolvimento ${error}`);
 			});
 	},
-	actionBuildLess() {},
 	actionPrepareBosApp() {
 		bosHelpers.log.info(`*** BosApp preparando ambiente, aguarde...`);
 		bosCore
 			.prepareBosApp()
 			.then(() => {
-				bosHelpers.log.success(`*** BosApp preparado com sucesso!`);
+				bosHelpers.log.info(`*** BosApp preparado com sucesso!`);
 			})
 			.catch((error) => {
 				bosHelpers.log.error(`Erro preparando ambiente para execução do BosApp ${error}!`);
@@ -133,22 +193,33 @@ module.exports = {
 			});
 	},
 	startApp(options) {
-		let _options = {
-			port: process.env.bosBackendPort || 9090,
-			env: options.environment || process.env.bosEnvironment || 'development',
-			requestTimeout: process.env.bosBackendRequestTimeOut ? parseInt(process.env.bosBackendRequestTimeOut) : 1000 || 10000,
-			db: {
-				name: process.env.bosMongoDatabaseName,
-				connectionString: process.env.bosMongoCs,
-				options: {}
+		try {
+			options = options || {};
+			let _options = {
+				port: process.env.bosBackendPort || 9090,
+				env: options.environment || process.env.bosEnvironment || 'development',
+				requestTimeout: process.env.bosBackendRequestTimeOut ? parseInt(process.env.bosBackendRequestTimeOut) : 10000 || 10000,
+				db: {
+					mongoDatabaseName: process.env.bosMongoDatabaseName,
+					mongoConnectionString: process.env.bosMongoConnectionString
+				}
+			};
+
+			if (_options.env !== 'development') {
+				bosHelpers.log.attention(`*** BosApp em modo ${_options.env}`);
 			}
-		};
 
-		if (_options.env !== 'development') {
-			bosHelpers.log.attention(`*** BosApp em modo ${_options.env}`);
+			bosCore
+				.startApp(_options)
+				.then((result) => {
+					bosHelpers.log.info(result);
+				})
+				.catch((error) => {
+					bosHelpers.log.error(`Erro iniciando bos app ${error}`);
+				});
+		} catch (error) {
+			bosHelpers.log.error(`Erro iniciando bos app ${error}`);
 		}
-
-		bosCore.startApp(_options);
 	},
 	actionGenerateKey() {
 		let generateKey = () => {

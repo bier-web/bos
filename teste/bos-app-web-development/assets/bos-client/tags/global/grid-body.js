@@ -1,0 +1,5 @@
+
+
+riot.tag2('grid-body', '<tr if="{opts.properties.gridType == helpersWebApp.gridType.crud &amp;&amp; opts.data.length &gt; 0 &amp;&amp; opts.properties.dataColumns.length &gt; 0}" each="{r in opts.data}" id="grid-item-{r.id}" data-is="grid-item" data="{r}" grid-properties="{parent.opts}"></tr> <tr if="{opts.properties.gridType == helpersWebApp.gridType.crud &amp;&amp; opts.data.length == 0 &amp;&amp; opts.properties.dataColumns.length &gt; 0}"> <td class="wide three">Não há {typeof opts.collection.reportLabel != \'undefined\' ? opts.collection.reportLabel : ⁗registros⁗} </td> </tr> <tr if="{opts.properties.gridType == helpersWebApp.gridType.dashboard &amp;&amp; opts.properties.chartRows.length &gt; 0}" each="{gridItemChart in opts.properties.chartRows}" data-is="grid-item-chart" data="{gridItemChart}" grid-properties="{parent.opts}"></tr> <tr if="{opts.properties.gridType == helpersWebApp.gridType.dashboard &amp;&amp; opts.properties.chartRows.length == 0}"> <td class="wide three">Não há gráficos para mostrar</td> </tr>', '', 'class="grid-body"', function(opts) {
+gridBodyTag.call(this, this.opts)
+});

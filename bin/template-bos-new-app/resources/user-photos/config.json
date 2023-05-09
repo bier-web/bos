@@ -1,6 +1,0 @@
-{
-	"type": "Fileupload",
-	"directory": "assets/imgs/user-photos",
-	"authorization": true,
-	"uniqueFilename": true
-}

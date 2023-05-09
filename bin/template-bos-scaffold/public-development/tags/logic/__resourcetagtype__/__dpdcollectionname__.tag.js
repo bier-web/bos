@@ -5,7 +5,7 @@ __collectioncamelcase__Tag = function (opts) {
 		var grid__collectioncamelcase__ = {
 			properties: {
 				gridType: helpersWebApp.gridType.crud,
-				name: '__dpdcollectionname__',
+				name: '__boscollectionname__',
 				class: 'striped',
 				size: 'wide',
 				item_tap: function (element, data) {},
@@ -15,7 +15,7 @@ __collectioncamelcase__Tag = function (opts) {
 				showFilter: true,
 				commandButtons: [helpersWebApp.both().actions.add],
 				addEditTag: '__collectionnamesingular__',
-				mainContainer: '.__dpdcollectionname__-container',
+				mainContainer: '.__boscollectionname__-container',
 				actionRow: true,
 				showPagination: {
 					pageSize: helpersWebApp.gridPageSize.normal
@@ -73,6 +73,6 @@ __collectioncamelcase__Tag = function (opts) {
 			}
 		};
 
-		_grid = riot.mount('#grid-__dpdcollectionname__', 'grid', grid__collectioncamelcase__)[0];
+		_grid = riot.mount('#grid-__boscollectionname__', 'grid', grid__collectioncamelcase__)[0];
 	});
 };

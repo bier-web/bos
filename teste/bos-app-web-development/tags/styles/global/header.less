@@ -1,0 +1,38 @@
+// BOS - BierOnStack - File Reserved: ToChange
+@import 'bos-colors';
+
+.header-tag {
+    width: 100%;
+
+    .header-tag-container {
+        width: 100% !important;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        background-color: @bosHeaderBkgColor;
+        @media only screen and (max-width:767.98px) {
+            margin-left: 0 !important;
+        }
+        .column {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            .menu-button {
+                background-color: @bosHeaderMenuBkgColor !important;
+                color: @bosHeaderMenuTextColor;
+                display: inline-block;
+                height: 35px;
+                margin-left: 8px;
+            }
+            .logo {
+                width: 150px;
+                height: 60px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-image: url('../imgs/logo.png');
+            }
+        }
+    }
+}

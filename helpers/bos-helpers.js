@@ -1,9 +1,26 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const internalClient = require('bos-backend/lib/internal-client');
 
 require('colors');
 
 module.exports = {
+	connectBosBackendClient: function (callback) {
+		return new Promise((resolve, reject) => {
+			try {
+				let sessionStore = process.server.sessions;
+				sessionStore.createSession(function (error, createdSession) {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(internalClient.build(process.server, createdSession));
+					}
+				});
+			} catch (error) {
+				reject(error);
+			}
+		});
+	},
 	generateKey: function () {
 		return crypto.randomBytes(256).toString('hex');
 	},

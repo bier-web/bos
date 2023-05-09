@@ -1,12 +1,12 @@
-var helpers = requireModule('helpers');
+var helpers = requireModule("helpers");
 
 try {
-	var exportsManagerBusiness = requireModule('exports-manager-business');
-	var exportManager = this;
-	cancelUnless(internal, 'Usuário não autorizado!', 401);
-	exportsManagerBusiness.onDelete(ctx, dpd, me, exportManager);
+    var exportsManagerBusiness = requireModule("exports-manager-business");
+    var exportManager = this;
+    cancelUnless(internal, "Usuário não autorizado!", 401);
+    exportsManagerBusiness.onDelete(ctx, bbc, me, exportManager);
 } catch (error) {
-	helpers.notifyException('exports-manager -> onDelete -> erro desconhecido ->');
-	helpers.notifyException(error);
-	cancel();
+    helpers.notifyException("exports-manager -> onDelete -> erro desconhecido ->");
+    helpers.notifyException(error);
+    cancel();
 }

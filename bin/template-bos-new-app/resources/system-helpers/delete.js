@@ -1,1 +1,0 @@
-cancel("Acesso negado!");

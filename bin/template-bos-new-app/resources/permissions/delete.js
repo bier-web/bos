@@ -1,1 +1,0 @@
-cancelIf(!internal, 'Permissão negada');
