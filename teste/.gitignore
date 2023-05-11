@@ -5,8 +5,8 @@
 node_modules/
 data/
 .bos-backend/
-public-development/bower_components/
-public-development/assets/css/
-public-development/assets/bos-client/tags/
+bos-app-web-development/bower_components/
+bos-app-web-development/assets/css/
+bos-app-web-development/assets/bos-client/tags/
 public-production
 public-homolog
